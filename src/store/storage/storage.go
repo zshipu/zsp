@@ -1,4 +1,4 @@
-package main
+package storage
 
 import (
 	"github.com/syndtr/goleveldb/leveldb"
@@ -19,10 +19,10 @@ func NewLevDb() *Lvdb {
 }
 
 // Create insert new item
-func (s *Lvdb) CreateItem(item *models.IP) error {
+func (s *Lvdb) CreateItem(item *models.Article) error {
 
 	db := s.con
-	err := db.Put([]byte(item.Type+"-"+item.Data), []byte(item.Data), nil)
+	err := db.Put([]byte(item.Type+"-"+item.Title), []byte(item.Content), nil)
 	if err != nil {
 		return err
 	}
@@ -30,10 +30,10 @@ func (s *Lvdb) CreateItem(item *models.IP) error {
 }
 
 // Create insert new item
-func (s *Lvdb) DeleteItem(item *models.IP) error {
+func (s *Lvdb) DeleteItem(item *models.Article) error {
 
 	db := s.con
-	err := db.Delete([]byte(item.Type+"-"+item.Data), nil)
+	err := db.Delete([]byte(item.Type+"-"+item.Title), nil)
 	if err != nil {
 		return err
 	}
@@ -45,7 +45,7 @@ func (s *Lvdb) GetLevelDB() *leveldb.DB {
 	return s.con
 }
 
-func (s *Lvdb) GetLevlOne(keyPrefix string) (*models.IP, error) {
+func (s *Lvdb) GetLevlOne(typestr string) (*models.Article, error) {
 
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	total := s.GetTotal()
@@ -54,15 +54,15 @@ func (s *Lvdb) GetLevlOne(keyPrefix string) (*models.IP, error) {
 		randnum = r.Intn(total)
 	}
 	db := s.con
-	t := models.NewIP()
+	t := models.NewArticle()
 
-	// keyPrefix "https-"  "http-"
-	iter := db.NewIterator(utildb.BytesPrefix([]byte(keyPrefix)), nil)
+	// type
+	iter := db.NewIterator(utildb.BytesPrefix([]byte(typestr)), nil)
 	iflag := 0
 	for iter.Next() {
 		value := iter.Value()
 		if iflag >= randnum {
-			t.Data = string(value)
+			t.Content = string(value)
 			return t, nil
 		}
 		iflag++
@@ -73,18 +73,18 @@ func (s *Lvdb) GetLevlOne(keyPrefix string) (*models.IP, error) {
 	return nil, err
 }
 
-func (s *Lvdb) GetLevlPre(keyPrefix string, data string) (*models.IP, error) {
+func (s *Lvdb) GetLevlPre(typestr string, data string) (*models.Article, error) {
 
 	db := s.con
-	t := models.NewIP()
+	t := models.NewArticle()
 
-	// keyPrefix "https-"  "http-"
-	iter := db.NewIterator(utildb.BytesPrefix([]byte(keyPrefix)), nil)
+	// type
+	iter := db.NewIterator(utildb.BytesPrefix([]byte(typestr)), nil)
 	iflag := 0
 	for iter.Next() {
 		value := iter.Value()
 		if string(value) == data {
-			t.Data = string(value)
+			t.Content = string(value)
 			return t, nil
 		}
 		iflag++
@@ -95,17 +95,20 @@ func (s *Lvdb) GetLevlPre(keyPrefix string, data string) (*models.IP, error) {
 	return nil, err
 }
 
-func (s *Lvdb) GetLevlList(keyPrefix string) ([]*models.IP, error) {
+func (s *Lvdb) GetLevlList(typestr string) ([]*models.Article, error) {
 
-	var ips []*models.IP
+	ips := make([]*models.Article, 10)
 
 	db := s.con
-	iter := db.NewIterator(utildb.BytesPrefix([]byte(keyPrefix)), nil)
+	iter := db.NewIterator(utildb.BytesPrefix([]byte(typestr)), nil)
 	k := 0
 	for iter.Next() {
 		k++
 		value := iter.Value()
-		ips[k] = &models.IP{Data: string(value)}
+		ips[k] = &models.Article{Content: string(value)}
+		if k > 9 {
+			break
+		}
 	}
 	iter.Release()
 
@@ -114,17 +117,23 @@ func (s *Lvdb) GetLevlList(keyPrefix string) ([]*models.IP, error) {
 }
 
 // GetAll .
-func (s *Lvdb) GetAll() ([]*models.IP, error) {
+func (s *Lvdb) GetAll() ([]*models.Article, error) {
 
-	var ips []*models.IP
+	icount := s.GetTotal()
+
+	ips := make([]*models.Article, icount)
 
 	db := s.con
 	iter := db.NewIterator(nil, nil)
 	k := 0
 	for iter.Next() {
-		k++
+
 		value := iter.Value()
-		ips[k] = &models.IP{Data: string(value)}
+		if value != nil && len(value) > 0 {
+			ips[k] = &models.Article{Content: string(value), Title: string(iter.Key())}
+			k++
+		}
+
 	}
 	iter.Release()
 
