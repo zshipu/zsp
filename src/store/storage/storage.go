@@ -12,7 +12,7 @@ type Lvdb struct {
 	con *leveldb.DB
 }
 
-var GlobalDB, _ = leveldb.OpenFile("./db", nil)
+var GlobalDB, _ = leveldb.OpenFile("./dbtemp", nil)
 
 func NewLevDb() *Lvdb {
 	return &Lvdb{con: GlobalDB}
