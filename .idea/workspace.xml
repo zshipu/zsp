@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f35b328-5e79-43e2-bb2c-edf50cb44df9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/crawler/httpget/httpget.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/crawler/httpimg/httpimg.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/CONTRIBUTORS.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/api/api.proto" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/api/generate.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/cmd/main.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/configs/application.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/configs/grpc.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/configs/http.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/configs/memcache.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/configs/mysql.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/configs/redis.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/internal/dao/dao.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/internal/model/model.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/internal/server/grpc/server.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/internal/server/http/server.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/articledb/internal/service/service.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/crawler/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/crawler/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/storage/storage.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/storage/storage.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/m2.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/m2.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/mindex.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/mindex.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <list id="2b2dd699-8229-4b9e-a0b0-968508aa8f68" name="local" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,43 +16,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/storage/storage.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/models/article.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="e#16#56#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/crawler/main.go">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="306">
+              <caret line="140" column="137" selection-start-line="140" selection-start-column="137" selection-end-line="140" selection-end-column="137" />
               <folding>
-                <element signature="e#14#56#0" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#h2#0;n#a#0;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#font#0;n#h2#0;n#a#0;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#div#0;n#a#1;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#font#0;n#font#0;n#div#0;n#a#1;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#article#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#article#0;n#div#10;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#article#0;n#div#12;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,7 +54,30 @@
       <find>content</find>
       <find>fmt.</find>
       <find>error</find>
+      <find>&lt;img</find>
+      <find>.jpeg</find>
+      <find>.png</find>
+      <find>images</find>
+      <find>woff</find>
+      <find>ans-600-normal.woff</find>
+      <find>../fonts/3579a82df686490a9d87fb05400f5fe3.woff</find>
+      <find>marat-sans-600-normal.woff</find>
+      <find>../fonts/marat-sans-400-normal.woff</find>
+      <find>300</find>
+      <find>../fonts/fell-400-normal.woff</find>
+      <find>../fonts/charter-700-normal.woff</find>
+      <find>../fonts/charter-700-italic.woff</find>
+      <find>../fonts/charter-400-normal.woff</find>
+      <find>../fonts/charter-400-italic.woff</find>
+      <find>../fonts/noe-display-500-normal.woff</find>
+      <find>medium</find>
+      <find>glyph.medium.com</find>
+      <find>自杀</find>
     </findStrings>
+    <replaceStrings>
+      <replace>../fonts/marat-sans-300-italic.woff</replace>
+      <replace>../fonts/marat-sans-600-normal.woff</replace>
+    </replaceStrings>
   </component>
   <component name="GOROOT" path="E:\Go" />
   <component name="Git.Settings">
@@ -113,13 +93,15 @@
         <option value="$PROJECT_DIR$/src/b.html" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/css/main-branding-base.ojtgi-bf-gnf2cvs584f8g.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/store/models/article.go" />
         <option value="$PROJECT_DIR$/src/store/main.go" />
         <option value="$PROJECT_DIR$/src/crawler/httpget/httpget.go" />
         <option value="$PROJECT_DIR$/src/crawler/httpimg/httpimg.go" />
-        <option value="$PROJECT_DIR$/src/crawler/main.go" />
         <option value="$PROJECT_DIR$/src/store/storage/storage.go" />
+        <option value="$PROJECT_DIR$/src/crawler/main.go" />
+        <option value="$PROJECT_DIR$/css/m2.css" />
+        <option value="$PROJECT_DIR$/css/mindex.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -135,6 +117,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -145,19 +128,17 @@
             <path>
               <item name="gowww" type="b2602c69:ProjectViewProjectNode" />
               <item name="gowww" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gowww" type="b2602c69:ProjectViewProjectNode" />
               <item name="gowww" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="crawler" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -217,19 +198,20 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15729484" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15349545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.33114755" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45409837" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.39016393" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.39016393" />
       <window_info anchor="bottom" id="File Transfer" order="9" weight="0.24918033" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.21440262" />
@@ -334,11 +316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/m2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/base.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -353,22 +330,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/articledb/CHANGELOG.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/articledb/CONTRIBUTORS.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/articledb/CHANGELOG.md" />
+    <entry file="file://$PROJECT_DIR$/src/articledb/CONTRIBUTORS.md" />
     <entry file="file://$PROJECT_DIR$/.project">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-224" />
@@ -388,13 +351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2732">
           <caret line="206" column="5" selection-start-line="206" selection-start-column="5" selection-end-line="206" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="49" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -478,11 +434,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/articledb/internal/dao/dao.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/articledb/internal/dao/dao.go" />
     <entry file="file://$PROJECT_DIR$/src/crawler/httpimg/httpimg.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -530,6 +482,67 @@
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
             <element signature="e#14#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_K3oqw1Ed_6VMaql4HojuDg.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_nq-3AgPhq3vj2zewZvFzNA.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_Ur6hR_2VVYRATITg-xzgow.gif">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_NECcaIHz7dKuAGfrlWYp5A.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_iYyE32u7EXRQ6ddGhVJvFw.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_g8Gl5sCN4avwBWUY_07COg.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_fujKMwsvpmX45piu28ld0g.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_DOrC8OC_iXAUXK7P0u0h2w.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_bCkWiCb_akUV6SMYELQRRA.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/1_e67bcSvpTMYHu40wMTBvTw.jpeg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/m2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="158" column="47" selection-start-line="158" selection-start-column="12" selection-end-line="158" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/mindex.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="2314" column="1" lean-forward="true" selection-start-line="2314" selection-start-column="1" selection-end-line="2314" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="140" column="137" selection-start-line="140" selection-start-column="137" selection-end-line="140" selection-end-column="137" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#h2#0;n#a#0;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#font#0;n#h2#0;n#a#0;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#div#0;n#a#1;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#font#0;n#font#0;n#div#0;n#a#1;n#div#0;n#div#0;n#div#0;n#article#0;n#div#0;n#section#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#article#0;n#div#5;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#article#0;n#div#10;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#article#0;n#div#12;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
