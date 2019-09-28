@@ -1,10 +1,10 @@
 package Common
 
 import (
+	"gowww/hot/Config"
 	"database/sql"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"gowww/hot/Config"
 	"log"
 	"math"
 	"strconv"
