@@ -1,0 +1,91 @@
+{
+  "name": "chinese-colors",
+  "version": "2.0.0",
+  "description": "Chinese Color Cheatsheet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "changelog": "auto-changelog -p --release-summary -l false --template changelog.template.hbs && git add CHANGELOG.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zerosoul/chinese-colors.git"
+  },
+  "keywords": [
+    "color",
+    "chinese",
+    "design",
+    "wallpaper",
+    "react",
+    "tool",
+    "amazing"
+  ],
+  "author": "tristan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zerosoul/chinese-colors/issues"
+  },
+  "homepage": "https://ichuantong.cn",
+  "dependencies": {
+    "@ungap/url-search-params": "^0.1.2",
+    "color-convert": "^2.0.1",
+    "file-saver": "^2.0.2",
+    "html2canvas": "^1.0.0-rc.4",
+    "jinrishici": "^1.0.6",
+    "pinyin": "^2.9.0",
+    "react": "^16.9.0",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-dom": "^16.9.0",
+    "react-github-btn": "^1.0.6",
+    "react-router-dom": "^5.1.0",
+    "smooth-scroll-into-view-if-needed": "^1.1.23",
+    "styled-components": "^4.4.0",
+    "styled-reset": "^4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "auto-changelog": "^1.16.1",
+    "autodll-webpack-plugin": "^0.4.2",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-react-hooks": "^2.0.1",
+    "file-loader": "^4.2.0",
+    "gh-pages": "^2.1.1",
+    "happypack": "^5.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.0.5",
+    "installed-check-core": "^3.0.0",
+    "interpolate-html-plugin": "^3.0.0",
+    "lint-staged": "^9.4.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "prettier": "^1.17.1",
+    "react-dev-utils": "^9.0.4",
+    "style-loader": "^1.0.0",
+    "terser-webpack-plugin": "^2.1.0",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.41.0",
+    "webpack-bundle-analyzer": "^3.5.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1",
+    "webpack-manifest-plugin": "^2.1.2",
+    "webpack-merge": "^4.2.2",
+    "workbox-webpack-plugin": "^4.3.1"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  }
+}
