@@ -4,7 +4,7 @@ avatar: /img/avatar.jpg
 favicon: /img/avatar.jpg
 
 #如果博客放置位置不是根目录，则可以通过配置此路径解决静态文件路径错误问题
-# 比如访问地址为 yelog.org/blog 那就需要配置为 blog_path: /blog 才能正常访问
+# 比如访问地址为 zshipu.com/blog 那就需要配置为 blog_path: /blog 才能正常访问
 blog_path: /
 
 #链接图标 显示顺序和下面顺序一致
@@ -64,9 +64,9 @@ menu:
       on: false
       url: /photo
       type: 1  # 跳转类型 1：站内异步跳转
-    叶落阁:
+    知识铺:
       on: false
-      url: http://yelog.org/
+      url: https://zshipu.com/
       type: 2  # 跳转类型 2：当前页面跳转
     github:
       on: false
@@ -125,7 +125,7 @@ article_list:
 # 文章列表背景图
 article_bg_img:
   on: true # 是否开启
-  src: https://i.loli.net/2019/07/22/5d3521411f3f169375.png
+  src: /img/5d3521411f3f169375.png
   opacity: 0.3 # 背景图透明度，范围 0 ～ 1
 
 # 列表样式
@@ -194,7 +194,7 @@ mathjax:
 
 # 友情链接
 friends:
-  叶落阁: http://yelog.org/
+  知识铺: https://zshipu.com/
 
 ##########评论设置#############
 comment:
@@ -218,11 +218,11 @@ gentie:
   # 网易云跟帖暂时不支持查询评论数，所以启用时，把评论数关掉，上方comment_count: false。
 
 gitalk:
-  githubID: yelog
-  repo: yelog.github.io
+  githubID: zshipu
+  repo: zshipu.github.io
   ClientID:
   ClientSecret:
-  adminUser: yelog
+  adminUser: zshipu
   distractionFreeMode: true
   language: zh-CN
   perPage: 10
@@ -239,8 +239,8 @@ gitalk:
 
 
 gitment:
-  owner: yelog
-  repo: yelog.github.io
+  owner: zshipu
+  repo: zshipu.github.io
   client_id:
   client_secret:
   # gitment : 通过github issue实现的评论系统
