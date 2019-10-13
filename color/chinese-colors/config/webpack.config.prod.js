@@ -20,7 +20,7 @@ module.exports = merge(commonConfig, {
     // 主文件以及一个异步加载chunk的文件
     filename: 'static/js/[name].[chunkhash:6].js',
     chunkFilename: 'static/js/[name].[chunkhash:6].chunk.js',
-    publicPath: paths.servedPath
+    publicPath: '/color/'
   },
   resolve: {
     modules: [__dirname, 'node_modules']

@@ -4,7 +4,7 @@ const paths = require('./paths');
 const merge = require('webpack-merge');
 const commonConfig = require('./webpack.config.common');
 // 为方便配置，以根目录为本地服务器地址
-const publicPath = '/';
+const publicPath = '/color';
 
 // 下面是development的webpack配置
 // 为了更好的开发体验，会专注于更快的构建速度
