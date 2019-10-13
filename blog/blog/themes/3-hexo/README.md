@@ -17,7 +17,7 @@ demo: [yelog.org](https://yelog.org/)  
 
 ## 安装
 ```bash
-git clone https://github.com/yelog/hexo-theme-3-hexo.git themes/3-hexo
+git clone https://github.com/liliang8858/hexo-theme-3-hexo.git themes/3-hexo
 ```
 修改hexo根目录的`_config.yml`，如下
 ```xml
