@@ -1,3 +1,9 @@
+---
+title: go入门教程-go入门教程-目录   
+date: 2019-10-15 21:37:16   
+categories: Golang   
+tags: [go]   
+---
 # 0 go 入门教程 目录
 - [前言](0 前言.md)
 

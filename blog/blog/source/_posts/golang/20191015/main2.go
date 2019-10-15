@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -12,7 +14,7 @@ func main() {
 }
 
 func ReSetPhotoNames2() {
-	photoFolder := "E:\\app\\im-ai\\knowledge-base\\blog\\blog\\source\\_posts\\golang\\20191015"
+	photoFolder := "D:\\gowww\\blog\\blog\\source\\_posts\\golang\\20191015"
 
 	files, _ := ioutil.ReadDir(photoFolder)
 	for _, file := range files {
@@ -32,15 +34,21 @@ func ReSetPhotoNames2() {
 					continue
 				}
 				content := string(bytes)
+				timestamp := time.Now().Unix()
+				tm := time.Unix(timestamp, 0)
+				formattimestr := tm.Format("2006-01-02 15:04:05")
+				fmt.Println(tm.Format("2006-01-02 15:04:05"))
 				prx :=`---
 title: go入门教程-`+title+`   
-date: 2019-09-16 17:48:16   
-categories: Java   
-tags: [java]   
+date: `+formattimestr+`   
+categories: Golang   
+tags: [go]   
 ---
 `;
-
-				fmt.Println(prx+content)
+				f, err := os.OpenFile(fpath, os.O_WRONLY|os.O_TRUNC, 0600)
+				defer f.Close()
+				num, err := f.WriteString(prx+content)
+				fmt.Println(num)
 			}
 
 		}
