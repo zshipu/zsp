@@ -19,7 +19,7 @@ func main() {
 var rootHtmlTmpl = template.Must(template.New("rootHtml").Parse(`
 <html><body>
 <h1>URL SHORTENER</h1>
-{{if .}}{{.}}<br /><br />{{end}}
+{.{if .}}{.{.}}<br /><br />{.{end}}
 <form action="/short" type="POST">
 Shorten this: <input type="text" name="longUrl" />
 <input type="submit" value="Give me the short URL" />

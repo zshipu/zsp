@@ -12,15 +12,15 @@ import (
 const guestbookTemplateHTML = `
 <html>
   <body>
-    {{range .}}
-      {{with .Author}}
-        <p><b>{{html .}}</b> wrote:</p>
-      {{else}}
+    {.{range .}}
+      {.{with .Author}}
+        <p><b>{.{html .}}</b> wrote:</p>
+      {.{else}}
         <p>An anonymous person wrote:</p>
-      {{end}}
-      <pre>{{html .Content}}</pre>
-      <pre>{{html .Date}}</pre>
-    {{end}}
+      {.{end}}
+      <pre>{.{html .Content}}</pre>
+      <pre>{.{html .Date}}</pre>
+    {.{end}}
     <form action="/sign" method="post">
       <div><textarea name="content" rows="3" cols="60"></textarea></div>
       <div><input type="submit" value="Sign Guestbook"></div>

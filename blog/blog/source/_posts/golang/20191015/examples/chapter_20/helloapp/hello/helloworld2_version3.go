@@ -20,7 +20,7 @@ const signTemplateHTML = `
 <html>
   <body>
     <p>You wrote:</p>
-    <pre>{{html .}}</pre>
+    <pre>{.{html .}}</pre>
   </body>
 </html>
 `

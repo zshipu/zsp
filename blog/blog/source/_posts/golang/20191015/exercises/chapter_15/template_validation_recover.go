@@ -17,10 +17,10 @@ func main() {
 	}()
 
 	//a valid template, so no panic with Must:
-	template.Must(tOk.Parse("/* and a comment */ some static text: {{ .Name }}"))
+	template.Must(tOk.Parse("/* and a comment */ some static text: {.{ .Name }}"))
 	fmt.Println("The first one parsed OK.")
 	fmt.Println("The next one ought to fail.")
-	template.Must(tErr.Parse(" some static text {{ .Name }"))
+	template.Must(tErr.Parse(" some static text {.{ .Name }"))
 }
 
 /* Output:

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"io/ioutil"
 	"os"
@@ -26,8 +27,23 @@ func ReSetPhotoNames2() {
 			if fileName[dotIndex:] == ".md"{
 				fpath := photoFolder + "\\" + fileName
 				fmt.Println(fpath)
-				title := fileName[:dotIndex]
-				fmt.Println(title)
+
+
+				f2, err := os.Open(fpath)
+				if err != nil {
+					continue
+				}
+				defer f2.Close()
+				rd := bufio.NewReader(f2)
+				title, err := rd.ReadString('\n')
+				if err != nil {
+					continue
+				}
+				title = strings.Replace(title,"#","" ,-1)
+				title = strings.Replace(title,"\n","" ,-1)
+				title = strings.Replace(title,"\r","" ,-1)
+				title = strings.Replace(title, "\uFEFF", "", -1)
+
 				bytes, err := ioutil.ReadFile(fpath)
 				if err != nil {
 					fmt.Println("error : %s", err)
