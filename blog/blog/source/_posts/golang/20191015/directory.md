@@ -5,7 +5,7 @@ categories: Golang
 tags: [go]   
 ---
 # 目录
-- [前言](file://preface.md)
+- [前言](https://blog.zshipu.com/2019/10/15/golang/20191015/preface/)
 
 ## 第一部分：学习 Go 语言
 
