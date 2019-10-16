@@ -69,5 +69,5 @@ Go 语言通过改善或去除在 C、C++ 或 Java 中的一些所谓“开放�
 
 ## 链接
 
-- [目录](directory.md)
-- 下一部分: [Go 语言的起源，发展与普及](01.1.md)
+- [目录](https://blog.zshipu.com/2019/10/15/golang/20191015/directory/)
+- 下一部分: [Go 语言的起源，发展与普及](file://01.1.md)

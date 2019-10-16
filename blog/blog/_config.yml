@@ -13,7 +13,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://zshipu.com
+url: https://blog.zshipu.com
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -27,11 +27,13 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-  - '*.html'
-  - '_posts/golang/20191015/examples/**'
-  - '_posts/golang/20191015/exercises/**'
-  - '_posts/golang/20191015/images/**'
-
+  - _posts/golang/20191015/examples/**
+  - _posts/golang/20191015/exercises/**
+  - _posts/golang/20191015/images/**
+admin:
+  username: admin
+  password_hash: $2a$10$eoYf8heyrvdwDyIUkQP7POo8Ae23xeCViHF5kv31wJiteP9SaGg6W
+  secret: my super hlwadmin secret phrase
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post
