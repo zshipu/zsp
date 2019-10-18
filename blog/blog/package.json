@@ -8,6 +8,7 @@
   "dependencies": {
     "hexo": "^3.9.0",
     "hexo-admin": "^2.3.0",
+    "hexo-copy-linkfile": "^1.0.0",
     "hexo-deployer-git": "^2.0.0",
     "hexo-filter-file-link": "^1.0.5",
     "hexo-generator-archive": "^0.1.5",
