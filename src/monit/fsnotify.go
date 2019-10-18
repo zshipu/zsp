@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"log"
+	"os/exec"
 	"time"
 )
 var ch chan int = make(chan  int )
@@ -70,6 +71,20 @@ func main() {
 					cur := time.Now().Sub(dis).Seconds()
 					if cur > 10 {
 						fmt.Println("hexo g")
+
+						cmdStr := `
+#!/bin/bash
+cd /etc/nginx/html/blog/blog
+hexo g
+`
+						cmd := exec.Command("bash", "-c", cmdStr)
+						cmd.StdoutPipe()
+						cmd.StderrPipe()
+						err := cmd.Start()
+						if err != nil {
+							fmt.Println(err)
+						}
+
 						dis = time.Now()
 					}
 				}
