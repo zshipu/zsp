@@ -1,9 +1,13 @@
 package main;
 
 import (
+	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"log"
+	"time"
 )
+var ch chan int = make(chan  int )
+var dis = time.Now()
 
 func main() {
 	//创建一个监控对象
@@ -44,6 +48,9 @@ func main() {
 					if ev.Op&fsnotify.Chmod == fsnotify.Chmod {
 						log.Println("修改权限 : ", ev.Name);
 					}
+
+					ch <- 0
+
 				}
 			case err := <-watch.Errors:
 				{
@@ -53,6 +60,24 @@ func main() {
 			}
 		}
 	}();
+
+	go func() {
+		for{
+			select {
+			case <-ch:
+				{
+					fmt.Println("modify")
+					cur := time.Now().Sub(dis).Seconds()
+					if cur > 10 {
+						fmt.Println("hexo g")
+						dis = time.Now()
+					}
+				}
+			}
+		}
+	}()
+
+
 
 	//循环
 	select {};
