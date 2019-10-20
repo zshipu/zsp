@@ -4,8 +4,8 @@ categories:
 tags:
 - nodejs,从零开始nodejs  
 keywords: 知识铺
-date: 2019-09-03T08:55:31+08:00
-title: 搭建 Node.js 开发环境
+date: 2019-10-20T20:32:12+08:00
+title: lesson0- 搭建 Node.js 开发环境
 author: 知识铺
 weight: -1
 ---

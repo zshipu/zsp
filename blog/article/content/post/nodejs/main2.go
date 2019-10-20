@@ -65,6 +65,10 @@ func dealpath(photoFolder string) {
 				formattimestr := tm.Format("2006-01-02T15:04:05Z07:00")
 				fmt.Println(formattimestr)
 				fmt.Println(tm.Format("2006-01-02T15:04:05Z07:00"))
+
+				folderIdx :=strings.LastIndex(photoFolder,"\\")
+				prxf := photoFolder[folderIdx+1:]
+
 				prx :=`---
 categories:
 - nodejs
@@ -72,7 +76,7 @@ tags:
 - nodejs,从零开始nodejs  
 keywords: 知识铺
 date: `+formattimestr+`
-title: `+title+`
+title: `+prxf+"-"+title+`
 author: 知识铺
 weight: -1
 ---

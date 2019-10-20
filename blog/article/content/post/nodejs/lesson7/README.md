@@ -4,8 +4,8 @@ categories:
 tags:
 - nodejs,从零开始nodejs  
 keywords: 知识铺
-date: 2019-10-20T20:21:58+08:00
-title:  浏览器端测试：mocha，chai，phantomjs
+date: 2019-10-20T20:32:12+08:00
+title: lesson7- 浏览器端测试：mocha，chai，phantomjs
 author: 知识铺
 weight: -1
 ---

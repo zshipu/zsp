@@ -4,8 +4,8 @@ categories:
 tags:
 - nodejs,从零开始nodejs  
 keywords: 知识铺
-date: 2019-10-20T20:21:58+08:00
-title:  使用 promise 替代回调函数
+date: 2019-10-20T20:32:12+08:00
+title: lesson17- 使用 promise 替代回调函数
 author: 知识铺
 weight: -1
 ---
