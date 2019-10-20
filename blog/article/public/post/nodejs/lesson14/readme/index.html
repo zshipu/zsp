@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="知识铺">
+        <meta name="description" content="《js 中的那些最佳实践》 这个章节需要大家帮忙补充，一次性想不完那么多 JavaScript 语言精粹 http://book.douban.com/subject/3590768/ 这本书很薄，只有 155 页，但该讲的几乎都讲了。大家想办法搞来看看">
+        <link rel="alternate" href="https://blog.zshipu.com/article/feed.xml" type="application/rss+xml" title="知识铺">
+        <link rel="icon" href="https://blog.zshipu.com/article/favicon.ico">
+        <title>lesson14- js 中的那些最佳实践 - 知识铺</title>
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/highlight.js.min.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/font-awesome/css/font-awesome.min.css" />
+        
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/hugo-org.css">
+        
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WLWJSST');</script>
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2874221941555456",
+                enable_page_level_ads: true
+            });
+        </script>
+    </head>
+
+<body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://blog.zshipu.com/article/">知识铺</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="https://blog.zshipu.com/">主页</a></li>
+                    
+                    
+                    <li ><a href="https://blog.zshipu.com/article/post/">文章列表</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-sm-11 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">lesson14- js 中的那些最佳实践</h1>
+                
+                <div class="doc-entry-meta small">
+                    <span><time datetime="2019-10-20">2019-10-20</time> by 知识铺 </span>
+                </div>
+                
+                <section>
+                    
+
+<h1 id="js-中的那些最佳实践">《js 中的那些最佳实践》</h1>
+
+<p><strong>这个章节需要大家帮忙补充，一次性想不完那么多</strong></p>
+
+<hr />
+
+<h3 id="javascript-语言精粹">JavaScript 语言精粹</h3>
+
+<p><a href="http://book.douban.com/subject/3590768/">http://book.douban.com/subject/3590768/</a></p>
+
+<p><img src="https://github.com/alsotang/node-lessons/blob/master/lesson14/1.png" alt="" /></p>
+
+<p>这本书很薄，只有 155 页，但该讲的几乎都讲了。大家想办法搞来看看吧（我总不能很没节操地给个电子版 PDF 链接在这里吧）。</p>
+
+<p>js 这门语言，水很浅。没有太复杂的地方可以钻，但特么的坑又多。</p>
+
+<p>上面的那本书是一定要看的。这本书专注在讲 js 语法，其他 js 的书都过多地涉及了浏览器知识。</p>
+
+<h3 id="javascript-之美">JavaScript 之美</h3>
+
+<ul>
+<li>其一：<a href="http://fxck.it/post/72326363595">http://fxck.it/post/72326363595</a></li>
+<li>其二：<a href="http://fxck.it/post/73513189448">http://fxck.it/post/73513189448</a></li>
+</ul>
+
+<h3 id="继承">继承</h3>
+
+<p>js 前端不懂有什么好办法，后端的话，很方便。</p>
+
+<p>用 node 官方的 <code>util</code> 库，下面是直接从官网摘抄来的：</p>
+
+<pre><code class="language-js">var util = require(&quot;util&quot;);
+var events = require(&quot;events&quot;);
+
+function MyStream() {
+    events.EventEmitter.call(this);
+}
+
+util.inherits(MyStream, events.EventEmitter);
+
+MyStream.prototype.write = function(data) {
+    this.emit(&quot;data&quot;, data);
+}
+
+var stream = new MyStream();
+
+console.log(stream instanceof events.EventEmitter); // true
+console.log(MyStream.super_ === events.EventEmitter); // true
+
+stream.on(&quot;data&quot;, function(data) {
+    console.log('Received data: &quot;' + data + '&quot;');
+})
+stream.write(&quot;It works!&quot;); // Received data: &quot;It works!&quot;
+</code></pre>
+
+<p>js 是面向对象的，但是是“基于原型的面向对象”，没有类。没有多重继承，没有接口。没有结构体，没有枚举类型。</p>
+
+<p>但它的字面量哈希和 function 都足够灵活，拼拼凑凑，上面那些东西都能“模拟”着用。</p>
+
+<p>说到没有类的这个问题，很多人总是要纠正其他人关于 js 原型的理解的。我觉得这是没有必要的。基于原型又不是很牛逼，ES6不是照样给出了 class 关键字吗。不管类还是原型都是为了抽象，烂的东西始终烂，不好理解的始终不好理解。</p>
+
+<p>最近学习 ios 的 swift，看见里面有不少相比 objc 舒服的改进。比如 objc 的“方法调用”，学的是 smalltalk 那一套，那不叫方法调用，而是消息传递。结果 swift 里面不照样是方法调用的形式？</p>
+
+<h3 id="callback-hell">callback hell</h3>
+
+<p>用 eventproxy 和 async 已经能解决大部分问题。剩下的小部分问题，肯定是设计错误。：）</p>
+
+<p>参见：</p>
+
+<ul>
+<li>《使用 eventproxy 控制并发》：<a href="https://github.com/alsotang/node-lessons/tree/master/lesson4">https://github.com/alsotang/node-lessons/tree/master/lesson4</a></li>
+<li>《使用 async 控制并发》：<a href="https://github.com/alsotang/node-lessons/tree/master/lesson5">https://github.com/alsotang/node-lessons/tree/master/lesson5</a></li>
+</ul>
+
+<h3 id="数据类型">数据类型</h3>
+
+<p>写 js 很少去定义类。Object 的便利在多数其他语言需要定义类的场景下都能直接用。</p>
+
+<p>js 中，用好 Number，String，Array，Object 和 Function 就够了。有时用用 RegExp。</p>
+
+<p>用于 js 这门语言本身的残废，大多数时候都采用“约定胜于配置”的思想来交互合作。</p>
+
+<h3 id="控制流">控制流</h3>
+
+<p>很常规，C 语言那套。</p>
+
+<h3 id="基本运算符">基本运算符</h3>
+
+<p>C 语言那套。二进制操作并不会降低效率，V8 很聪明的。</p>
+
+<h3 id="计算型属性">计算型属性</h3>
+
+<p>也就是帮一个对象的属性定义 get 和 set 方法，通过 <code>obj.value</code> 和 <code>obj.value=</code> 的形式来调用。</p>
+
+<p>koa(<a href="http://koajs.com/">http://koajs.com/</a> ) 把这套玩得炉火纯青。</p>
+
+<h3 id="运算符重载">运算符重载</h3>
+
+<p>无</p>
+
+<h3 id="类型转换">类型转换</h3>
+
+<p>手动帮你需要转换的类型的类定义 <code>.toxxx</code> 方法，比如 <code>.toString</code>，<code>.toJSON</code>，<code>toNumber</code>。</p>
+
+<p>js 的隐式类型转换用一次坑一次。</p>
+
+<h3 id="相等比较">相等比较</h3>
+
+<p>在 js 中，务必使用 <code>===</code> 三个等于号来比较对象，或者自定义方法来比较，不要使用 <code>==</code>。</p>
+
+<p>我最近做一个项目，从数据库中取出的数据，虽然应该是字符型的，但有时它们是 String 的表示，有时是 Number 的表示。为了省事，会有人直接用 <code>==</code> 来对它们进行比较。这种时候，建议在比较时，把它们都转成 String 类型，然后用 <code>===</code> 来比较。</p>
+
+<p>比如 <code>var x = 31243; var y = '31243'</code>，比较时，这么做：<code>String(x) === String(y)</code></p>
+
+<h3 id="嵌套类型">嵌套类型</h3>
+
+<p>随便弄。</p>
+
+<p>function 构造函数、闭包、字面量哈希，都可以混在一起写，多少层都行，无限制。</p>
+
+<h3 id="拓展">拓展</h3>
+
+<p>当无法接触一个类的源码，又想帮这个类新增方法的时候。操作它的 prototype 就好了。但不推荐！</p>
+
+<h3 id="函数式编程">函数式编程</h3>
+
+<p>js 中，匿名函数非常的方便，有效利用函数式编程的特性可以使人写代码时心情愉悦。</p>
+
+<p>使用 lodash：<a href="https://lodash.com/docs">https://lodash.com/docs</a></p>
+
+<h3 id="泛型">泛型</h3>
+
+<p>类型都经常忽略还泛型！every parammeter is 泛型 in js</p>
+
+<h3 id="权限控制">权限控制</h3>
+
+<p>类定义中，没有 public private 等关键词，都靠约定。而且经常有人突破约定。</p>
+
+<p>有些 http 方面的库，时不时就去 stub 原生 http 库的方法，0.11 时的 node.js 完全不按章法出牌，所以很多这些库都出现兼容性问题。</p>
+
+<h3 id="设计模式">设计模式</h3>
+
+<p>《解密设计模式-王垠》</p>
+
+<p><a href="https://github.com/alsotang/node-lessons/blob/master/lesson14/%E8%A7%A3%E5%AF%86%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8E%8B%E5%9E%A0.md">https://github.com/alsotang/node-lessons/blob/master/lesson14/%E8%A7%A3%E5%AF%86%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E7%8E%8B%E5%9E%A0.md</a></p>
+
+<h3 id="构建大型项目">构建大型项目</h3>
+
+<p>从 npm 上面寻找质量高的库，并用质量高的方式拼凑起来。</p>
+
+                </section>
+            </article>
+        </main>
+    </div> 
+    
+<div class="col-xs-12 col-sm-3 doc-sidebar">
+	<div class="sidebar-module">
+		<div class="sidebar-toc">
+			<h4>Table of Contents</h4>
+			<ul>
+				<li><strong><a href="#title">lesson14- js 中的那些最佳实践</a></strong></li>
+			</ul>
+			<nav id="TableOfContents">
+<ul>
+<li><a href="#js-中的那些最佳实践">《js 中的那些最佳实践》</a>
+<ul>
+<li>
+<ul>
+<li><a href="#javascript-语言精粹">JavaScript 语言精粹</a></li>
+<li><a href="#javascript-之美">JavaScript 之美</a></li>
+<li><a href="#继承">继承</a></li>
+<li><a href="#callback-hell">callback hell</a></li>
+<li><a href="#数据类型">数据类型</a></li>
+<li><a href="#控制流">控制流</a></li>
+<li><a href="#基本运算符">基本运算符</a></li>
+<li><a href="#计算型属性">计算型属性</a></li>
+<li><a href="#运算符重载">运算符重载</a></li>
+<li><a href="#类型转换">类型转换</a></li>
+<li><a href="#相等比较">相等比较</a></li>
+<li><a href="#嵌套类型">嵌套类型</a></li>
+<li><a href="#拓展">拓展</a></li>
+<li><a href="#函数式编程">函数式编程</a></li>
+<li><a href="#泛型">泛型</a></li>
+<li><a href="#权限控制">权限控制</a></li>
+<li><a href="#设计模式">设计模式</a></li>
+<li><a href="#构建大型项目">构建大型项目</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+		</div>
+	</div>
+	<div class="sidebar-module">
+		<h4>Tags</h4>
+		<div class="tag-box">
+		
+		</div>
+	</div>
+</div>
+
+</div> 
+
+
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-12">
+        
+	    <div class="text-center">
+        
+		    <p class="doc-footer-em"><a href="#">回到顶部↑</a></p>
+	    </div>
+	</div>
+</div>
+
+</div> 
+
+<footer class="doc-footer">
+	
+    <p>Copyright © <a href="https://blog.zshipu.com/">知识铺</a> 2019. Generated by <a href="http://gohugo.io/">Hugo</a></p>
+</footer>
+
+
+
+<script src="https://blog.zshipu.com/article/js/jquery-1.11.2.min.js"></script>
+<script src="https://blog.zshipu.com/article/js/bootstrap.min.js"></script>
+
+<script src="https://blog.zshipu.com/article/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://blog.zshipu.com/article/js/ie10-viewport-bug-workaround.js"></script>
+
+<div style="position:absolute; bottom: 0; right: 0;">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=962982601&auto=1&height=90"></iframe>
+</div>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+
+</body>
+</html>
+

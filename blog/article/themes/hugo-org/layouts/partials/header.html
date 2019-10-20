@@ -50,7 +50,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li {{ if eq $isHomePage true }}class="active"{{ end }}><a href="{{ $baseUrl }}/">主页</a></li>
+                    <li {{ if eq $isHomePage true }}class="active"{{ end }}><a href="https://blog.zshipu.com/">主页</a></li>
                     {{ $url := .URL}}
                     {{ range .Site.Menus.home}}
                     <li {{ if eq $url .URL }}class="active"{{ end }}><a href="{{ .URL }}">{{ .Name }}</a></li>

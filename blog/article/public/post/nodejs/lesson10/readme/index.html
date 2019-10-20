@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="知识铺">
+        <meta name="description" content="《benchmark 怎么写》 目标 有一个字符串 var number = &#39;100&#39;，我们要将它转换成 Number 类型的 100。 目前有三个选项：&#43;, parseInt, Number 请测试哪个方法更快。 知">
+        <link rel="alternate" href="https://blog.zshipu.com/article/feed.xml" type="application/rss+xml" title="知识铺">
+        <link rel="icon" href="https://blog.zshipu.com/article/favicon.ico">
+        <title>lesson10- benchmark 怎么写 - 知识铺</title>
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/highlight.js.min.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/font-awesome/css/font-awesome.min.css" />
+        
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/hugo-org.css">
+        
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WLWJSST');</script>
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2874221941555456",
+                enable_page_level_ads: true
+            });
+        </script>
+    </head>
+
+<body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://blog.zshipu.com/article/">知识铺</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="https://blog.zshipu.com/">主页</a></li>
+                    
+                    
+                    <li ><a href="https://blog.zshipu.com/article/post/">文章列表</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-sm-11 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">lesson10- benchmark 怎么写</h1>
+                
+                <div class="doc-entry-meta small">
+                    <span><time datetime="2019-10-20">2019-10-20</time> by 知识铺 </span>
+                </div>
+                
+                <section>
+                    
+
+<h1 id="benchmark-怎么写">《benchmark 怎么写》</h1>
+
+<h2 id="目标">目标</h2>
+
+<p>有一个字符串 <code>var number = '100'</code>，我们要将它转换成 Number 类型的 100。</p>
+
+<p>目前有三个选项：+, parseInt, Number</p>
+
+<p>请测试哪个方法更快。</p>
+
+<h2 id="知识点">知识点</h2>
+
+<ol>
+<li>学习使用 benchmark 库</li>
+<li>学习使用 <a href="http://jsperf.com/">http://jsperf.com/</a> 分享你的 benchmark</li>
+</ol>
+
+<h2 id="课程内容">课程内容</h2>
+
+<p>首先去弄个 benchmark 库，<a href="https://github.com/bestiejs/benchmark.js">https://github.com/bestiejs/benchmark.js</a> 。</p>
+
+<p><del> 这个库已经两年没有更新了，两年前发了个 1.0.0 版本，直到现在。 </del></p>
+
+<p>这个库的最新版本是 2.1.4</p>
+
+<p>用法也特别简单，照着官网的 copy 下来就好。</p>
+
+<p>我们先来实现这三个函数：</p>
+
+<pre><code class="language-js">var int1 = function (str) {
+  return +str;
+};
+
+var int2 = function (str) {
+  return parseInt(str, 10);
+};
+
+var int3 = function (str) {
+  return Number(str);
+};
+</code></pre>
+
+<p>然后照着官方的模板写 benchmark suite：</p>
+
+<pre><code class="language-js">var number = '100';
+
+// 添加测试
+suite
+.add('+', function() {
+  int1(number);
+})
+.add('parseInt', function() {
+  int2(number);
+})
+.add('Number', function () {
+  int3(number);
+})
+// 每个测试跑完后，输出信息
+.on('cycle', function(event) {
+  console.log(String(event.target));
+})
+.on('complete', function() {
+  console.log('Fastest is ' + this.filter('fastest').map('name'));
+})
+// 这里的 async 不是 mocha 测试那个 async 的意思，这个选项与它的时间计算有关，默认勾上就好了。
+.run({ 'async': true });
+</code></pre>
+
+<p>直接运行：</p>
+
+<p><img src="https://raw.githubusercontent.com/alsotang/node-lessons/master/lesson10/1.png" alt="" /></p>
+
+<p>可以看到，parseInt 是最快的。</p>
+
+<h3 id="在线分享">在线分享</h3>
+
+<p>如果想要在线分享你的 js benchmark，用这个网站：<a href="http://jsperf.com/">http://jsperf.com/</a> 。</p>
+
+<p>比如我在上面测试 <code>Math.log</code> 的效率：</p>
+
+<p><a href="http://jsperf.com/math-perf-alsotang">http://jsperf.com/math-perf-alsotang</a></p>
+
+<p>进入之后点击那个 <code>Run tests</code> 按钮，就可以在浏览器中看到它们的效率差异了，毕竟浏览器也是可以跑 js 的。</p>
+
+<p>点击这里：<a href="http://jsperf.com/math-perf-alsotang/edit">http://jsperf.com/math-perf-alsotang/edit</a> ，就可以看到这个 benchmark 是怎么配置的，很简单。</p>
+
+                </section>
+            </article>
+        </main>
+    </div> 
+    
+<div class="col-xs-12 col-sm-3 doc-sidebar">
+	<div class="sidebar-module">
+		<div class="sidebar-toc">
+			<h4>Table of Contents</h4>
+			<ul>
+				<li><strong><a href="#title">lesson10- benchmark 怎么写</a></strong></li>
+			</ul>
+			<nav id="TableOfContents">
+<ul>
+<li><a href="#benchmark-怎么写">《benchmark 怎么写》</a>
+<ul>
+<li><a href="#目标">目标</a></li>
+<li><a href="#知识点">知识点</a></li>
+<li><a href="#课程内容">课程内容</a>
+<ul>
+<li><a href="#在线分享">在线分享</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+		</div>
+	</div>
+	<div class="sidebar-module">
+		<h4>Tags</h4>
+		<div class="tag-box">
+		
+		</div>
+	</div>
+</div>
+
+</div> 
+
+
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-12">
+        
+	    <div class="text-center">
+        
+		    <p class="doc-footer-em"><a href="#">回到顶部↑</a></p>
+	    </div>
+	</div>
+</div>
+
+</div> 
+
+<footer class="doc-footer">
+	
+    <p>Copyright © <a href="https://blog.zshipu.com/">知识铺</a> 2019. Generated by <a href="http://gohugo.io/">Hugo</a></p>
+</footer>
+
+
+
+<script src="https://blog.zshipu.com/article/js/jquery-1.11.2.min.js"></script>
+<script src="https://blog.zshipu.com/article/js/bootstrap.min.js"></script>
+
+<script src="https://blog.zshipu.com/article/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://blog.zshipu.com/article/js/ie10-viewport-bug-workaround.js"></script>
+
+<div style="position:absolute; bottom: 0; right: 0;">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=962982601&auto=1&height=90"></iframe>
+</div>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+
+</body>
+</html>
+

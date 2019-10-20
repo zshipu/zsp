@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="知识铺">
+        <meta name="description" content="《搭建 Node.js 开发环境》 本课程假设大家都是在 Linux 或者 Mac 下面。至于使用 Windows 并坚持玩新技术的同学，我坚信他们一定有着过人的、甚至是不可告人的兼容性 bug 处理能">
+        <link rel="alternate" href="https://blog.zshipu.com/article/feed.xml" type="application/rss+xml" title="知识铺">
+        <link rel="icon" href="https://blog.zshipu.com/article/favicon.ico">
+        <title>lesson0- 搭建 Node.js 开发环境 - 知识铺</title>
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/highlight.js.min.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/bootstrap-theme.css">
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/font-awesome/css/font-awesome.min.css" />
+        
+        <link rel="stylesheet" href="https://blog.zshipu.com/article/css/hugo-org.css">
+        
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-WLWJSST');</script>
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-2874221941555456",
+                enable_page_level_ads: true
+            });
+        </script>
+    </head>
+
+<body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://blog.zshipu.com/article/">知识铺</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li ><a href="https://blog.zshipu.com/">主页</a></li>
+                    
+                    
+                    <li ><a href="https://blog.zshipu.com/article/post/">文章列表</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-sm-11 doc-main">
+        <main role="main">
+            <article>
+                <a id="title"></a>
+                <h1 class="doc-entry-title">lesson0- 搭建 Node.js 开发环境</h1>
+                
+                <div class="doc-entry-meta small">
+                    <span><time datetime="2019-10-20">2019-10-20</time> by 知识铺 </span>
+                </div>
+                
+                <section>
+                    
+
+<h1 id="搭建-node-js-开发环境">《搭建 Node.js 开发环境》</h1>
+
+<p>本课程假设大家都是在 Linux 或者 Mac 下面。至于使用 Windows 并坚持玩新技术的同学，我坚信他们一定有着过人的、甚至是不可告人的兼容性 bug 处理能力，所以这部分同学麻烦在课程无法继续时，自行兼容一下。</p>
+
+<p>不久前公司刚发一台新 Mac 给我，所以我对于在新环境中安装 Node.js 的过程还是记忆犹新的。</p>
+
+<p>其实这过程特别简单:</p>
+
+<h3 id="先安装一个-nvm-https-github-com-creationix-nvm">先安装一个 nvm（ <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a> ）</h3>
+
+<pre><code>$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.25.2/install.sh | bash
+</code></pre>
+
+<p>nvm 的全称是 <strong>Node Version Manager</strong>，之所以需要这个工具，是因为 Node.js 的各种特性都没有稳定下来，所以我们经常由于老项目或尝新的原因，需要切换各种版本。</p>
+
+<p>安装完成后，你的 shell 里面应该就有个 nvm 命令了，调用它试试</p>
+
+<pre><code>$ nvm
+</code></pre>
+
+<p>当看到有输出时，则 nvm 安装成功。</p>
+
+<h3 id="安装-node-js">安装 Node.js</h3>
+
+<p>使用 nvm 的命令安装 Node.js 最新稳定版，现在是 <code>v0.12.3</code>。</p>
+
+<pre><code>$ nvm install 0.12
+</code></pre>
+
+<p>安装完成后，查看一下</p>
+
+<pre><code>$ nvm ls
+</code></pre>
+
+<p>这时候可以看到自己安装的所有 Node.js 版本，输出应如下：</p>
+
+<p><img src="https://raw.githubusercontent.com/alsotang/node-lessons/master/lesson0/1.png" alt="" /></p>
+
+<p>（图1）</p>
+
+<p>那个绿色小箭头的意思就是现在正在使用的版本，我这里是 <code>v0.10.29</code>。我还安装了 <code>v0.11.14</code>，但它并非我当前使用的版本。</p>
+
+<p>如果你那里没有出现绿色小箭头的话，告诉 nvm 你要使用 <code>0.12.x</code> 版本</p>
+
+<pre><code>$ nvm use 0.12
+</code></pre>
+
+<p>然后再次查看，这时候小箭头应该出现了。</p>
+
+<p>OK，我们在终端中输入</p>
+
+<pre><code>$ node
+</code></pre>
+
+<p>REPL(read–eval–print loop) 应该就出来了，那我们就成功了。</p>
+
+<p>随便敲两行命令玩玩吧。</p>
+
+<p>比如 <code>&gt; while (true) {}</code>，这时你的 CPU 应该会飚高。</p>
+
+<h3 id="完善安装">完善安装</h3>
+
+<p>上述过程完成后，有时会出现，当开启一个新的 shell 窗口时，找不到 node 命令的情况。</p>
+
+<p>这种情况一般来自两个原因</p>
+
+<p>一、shell 不知道 nvm 的存在</p>
+
+<p>二、nvm 已经存在，但是没有 default 的 Node.js 版本可用。</p>
+
+<p>解决方式：</p>
+
+<p>一、检查 <code>~/.profile</code> 或者 <code>~/.bash_profile</code> 中有没有这样两句</p>
+
+<pre><code>export NVM_DIR=&quot;/Users/YOURUSERNAME/.nvm&quot;
+[ -s &quot;$NVM_DIR/nvm.sh&quot; ] &amp;&amp; . &quot;$NVM_DIR/nvm.sh&quot;  # This loads nvm
+</code></pre>
+
+<p>没有的话，加进去。</p>
+
+<p>这两句会在 bash 启动的时候被调用，然后注册 nvm 命令。</p>
+
+<p>二、</p>
+
+<p>调用</p>
+
+<p><code>$ nvm ls</code></p>
+
+<p>看看像不像上述图1中一样，有 default 的指向。</p>
+
+<p>如果没有的话，执行</p>
+
+<p><code>$ nvm alias default 0.12</code></p>
+
+<p>再</p>
+
+<p><code>$ nvm ls</code></p>
+
+<p>看一下</p>
+
+                </section>
+            </article>
+        </main>
+    </div> 
+    
+<div class="col-xs-12 col-sm-3 doc-sidebar">
+	<div class="sidebar-module">
+		<div class="sidebar-toc">
+			<h4>Table of Contents</h4>
+			<ul>
+				<li><strong><a href="#title">lesson0- 搭建 Node.js 开发环境</a></strong></li>
+			</ul>
+			<nav id="TableOfContents">
+<ul>
+<li><a href="#搭建-node-js-开发环境">《搭建 Node.js 开发环境》</a>
+<ul>
+<li>
+<ul>
+<li><a href="#先安装一个-nvm-https-github-com-creationix-nvm">先安装一个 nvm（ <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a> ）</a></li>
+<li><a href="#安装-node-js">安装 Node.js</a></li>
+<li><a href="#完善安装">完善安装</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+		</div>
+	</div>
+	<div class="sidebar-module">
+		<h4>Tags</h4>
+		<div class="tag-box">
+		
+		</div>
+	</div>
+</div>
+
+</div> 
+
+
+
+<hr />
+
+<div class="row">
+    <div class="col-sm-12">
+        
+	    <div class="text-center">
+        
+		    <p class="doc-footer-em"><a href="#">回到顶部↑</a></p>
+	    </div>
+	</div>
+</div>
+
+</div> 
+
+<footer class="doc-footer">
+	
+    <p>Copyright © <a href="https://blog.zshipu.com/">知识铺</a> 2019. Generated by <a href="http://gohugo.io/">Hugo</a></p>
+</footer>
+
+
+
+<script src="https://blog.zshipu.com/article/js/jquery-1.11.2.min.js"></script>
+<script src="https://blog.zshipu.com/article/js/bootstrap.min.js"></script>
+
+<script src="https://blog.zshipu.com/article/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://blog.zshipu.com/article/js/ie10-viewport-bug-workaround.js"></script>
+
+<div style="position:absolute; bottom: 0; right: 0;">
+	<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=280 height=110 src="//music.163.com/outchain/player?type=0&id=962982601&auto=1&height=90"></iframe>
+</div>
+<script>
+	(function(){
+		var bp = document.createElement('script');
+		var curProtocol = window.location.protocol.split(':')[0];
+		if (curProtocol === 'https') {
+			bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+		}
+		else {
+			bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		}
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(bp, s);
+	})();
+</script>
+
+</body>
+</html>
+
