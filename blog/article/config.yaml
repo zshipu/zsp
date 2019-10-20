@@ -2,7 +2,7 @@ baseurl: "https://blog.zshipu.com/article"
 languageCode: "zh-CN"
 title: "知识铺"
 copyright: "Copyright © <a href=\"https://blog.zshipu.com/\">知识铺</a> 2019."
-theme: "hugo-org"
+theme: "hugo-theme-techdoc"
 canonifyurls: true
 RSSUri: "feed.xml"
 MetaDataFormat: "yaml"
