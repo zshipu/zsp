@@ -1,3 +1,15 @@
+---
+categories:
+- nodejs
+tags:
+- nodejs,从零开始nodejs  
+keywords: 知识铺
+date: 2019-10-20T20:21:58+08:00
+title:  cookie 和 session
+author: 知识铺
+weight: -1
+---
+
 # cookie 和 session
 
 众所周知，HTTP 是一个无状态协议，所以客户端每次发出请求时，下一次请求无法得知上一次请求所包含的状态数据，如何能把一个用户的状态数据关联起来呢？

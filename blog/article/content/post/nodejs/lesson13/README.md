@@ -1,3 +1,15 @@
+---
+categories:
+- nodejs
+tags:
+- nodejs,从零开始nodejs  
+keywords: 知识铺
+date: 2019-10-20T20:21:58+08:00
+title:  持续集成平台：travis
+author: 知识铺
+weight: -1
+---
+
 # 《持续集成平台：travis》
 
 ## 目标

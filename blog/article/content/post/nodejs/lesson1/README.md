@@ -1,3 +1,15 @@
+---
+categories:
+- nodejs
+tags:
+- nodejs,从零开始nodejs  
+keywords: 知识铺
+date: 2019-10-20T20:21:58+08:00
+title:  一个最简单的 express 应用
+author: 知识铺
+weight: -1
+---
+
 # 《一个最简单的 express 应用》
 
 ## 目标

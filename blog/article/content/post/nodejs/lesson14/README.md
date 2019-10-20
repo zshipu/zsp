@@ -1,3 +1,15 @@
+---
+categories:
+- nodejs
+tags:
+- nodejs,从零开始nodejs  
+keywords: 知识铺
+date: 2019-10-20T20:21:58+08:00
+title:  js 中的那些最佳实践
+author: 知识铺
+weight: -1
+---
+
 # 《js 中的那些最佳实践》
 **这个章节需要大家帮忙补充，一次性想不完那么多**
 
