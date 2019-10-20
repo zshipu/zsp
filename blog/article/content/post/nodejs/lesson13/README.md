@@ -5,7 +5,7 @@ tags:
 - nodejs,从零开始nodejs  
 keywords: 知识铺
 date: 2019-10-20T20:32:12+08:00
-title: lesson13- 持续集成平台：travis
+title: 从零开始nodejs lesson13- 持续集成平台：travis
 author: 知识铺
 weight: -1
 ---

@@ -5,7 +5,7 @@ tags:
 - nodejs,从零开始nodejs  
 keywords: 知识铺
 date: 2019-10-20T20:32:12+08:00
-title: lesson2- 学习使用外部模块
+title: 从零开始nodejs lesson2- 学习使用外部模块
 author: 知识铺
 weight: -1
 ---
