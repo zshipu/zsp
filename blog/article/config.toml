@@ -1,0 +1,5 @@
+baseURL = "https://blog.zshipu.com/article/public"
+languageCode = "zh-CN"
+title = "知识铺"
+
+theme = "ananke"
