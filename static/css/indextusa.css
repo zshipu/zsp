@@ -1,4 +1,3 @@
-/*! CSS Used from: https://vuepress-blog-boilerplate.bencodezen.io/assets/css/0.styles.e1d4f0fd.css */
 .icon.outbound{color:#aaa;display:inline-block;}
 .home{padding:3.6rem 2rem 0;max-width:960px;margin:0 auto;}
 .home .hero{text-align:center;}
@@ -32,7 +31,7 @@
     .sidebar-button{display:block;}
 }
 .search-box{display:inline-block;position:relative;margin-right:1rem;}
-.search-box input{cursor:text;width:10rem;height:2rem;color:#4e6e8e;display:inline-block;border:1px solid #cfd4db;border-radius:2rem;font-size:.9rem;line-height:2rem;padding:0 .5rem 0 2rem;outline:none;transition:all .2s ease;background:#fff url(https://vuepress-blog-boilerplate.bencodezen.io/assets/img/search.83621669.svg) .6rem .5rem no-repeat;background-size:1rem;}
+.search-box input{cursor:text;width:10rem;height:2rem;color:#4e6e8e;display:inline-block;border:1px solid #cfd4db;border-radius:2rem;font-size:.9rem;line-height:2rem;padding:0 .5rem 0 2rem;outline:none;transition:all .2s ease;background:#fff url(../img/search.svg) .6rem .5rem no-repeat;background-size:1rem;}
 .search-box input:focus{cursor:auto;border-color:#3eaf7c;}
 @media (max-width:959px){
     .search-box input{cursor:pointer;width:0;border-color:transparent;position:relative;}
