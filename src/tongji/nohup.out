@@ -1,8 +1,0 @@
-2019/10/18 17:54:11 try{BusuanziCallback_619841523380({"site_uv":10,"page_pv":1,"version":2.4,"site_pv":407});}catch(e){}
-
-  SERVER  | ADDRESS | DOMAIN  | METHOD | P |   ROUTE   |     HANDLER     | MIDDLEWARE  
-|---------|---------|---------|--------|---|-----------|-----------------|------------|
-  default |  :5040  | default | ALL    | 1 | /busuanzi | main.main.func1 |             
-|---------|---------|---------|--------|---|-----------|-----------------|------------|
-
-2019-10-18 17:54:11.408 28235: http server started listening on [:5040]
