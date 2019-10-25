@@ -519,6 +519,7 @@ body {
   flex: 1 0 auto;
   box-sizing: border-box;
   display: flex;
+  margin-top: 109px;
 }
 
 main {
@@ -687,12 +688,14 @@ main {
 }
 
 header {
-  background: #000;
+  background: #aecfdc;
   padding: .2rem 1.2rem;
+  position: fixed;
+  width: 100%;
 }
 
 header h1 {
-  color: #fff;
+  color: #333;
   font-size: 140%;
   display: inline-block;
   margin: 0;
@@ -714,7 +717,7 @@ header .github:hover {
 }
 
 .description {
-  color: #ddd;
+  color: #333;
   margin: 0;
 }
 
@@ -868,4 +871,10 @@ footer {
   font-size: 80%;
   text-align: right;
   color: #999;
+}
+
+.hmnue a {
+  margin-left: 49px;
+  color: #2a3a44;
+  text-decoration: none;
 }

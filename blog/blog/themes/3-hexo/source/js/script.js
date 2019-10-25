@@ -436,12 +436,12 @@ function bind() {
     initArticle();
     $(".article_number").text($("#zsp_site_posts_number").val());
     $(".site_word_count").text($("#zsp_site_word_count").val());
-    $(".site_uv").text($("#busuanzi_value_site_uv").text());
-    $("#busuanzi_value_site_uv").bind("DOMNodeInserted", function (e) {
+    $(".site_uv").text($("#pushtsua_value_site_uv").text());
+    $("#pushtsua_value_site_uv").bind("DOMNodeInserted", function (e) {
         $(".site_uv").text($(this).text())
     });
-    $(".site_pv").text($("#busuanzi_value_site_pv").text())
-    $("#busuanzi_value_site_pv").bind("DOMNodeInserted", function (e) {
+    $(".site_pv").text($("#pushtsua_value_site_pv").text())
+    $("#pushtsua_value_site_pv").bind("DOMNodeInserted", function (e) {
         $(".site_pv").text($(this).text())
     });
     $(".post .pjax .index").find("br").remove();
