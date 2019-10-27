@@ -126,7 +126,7 @@
 .Zsp-nav-link::before,.Header::before{left:0;content:'';}
 .Zsp-avatar,.Zsp-notification-icon{text-transform:uppercase;border-radius:50%;}
 .Header{position:fixed;height:60px;width:100%;z-index:100;font-size:16px;line-height:20px;font-weight:400;background-color:#fff;box-shadow:0 1px 0 0 #ddd;}
-.Header::before{position:absolute;top:0;height:4px;width:100%;background:linear-gradient(135deg, #bed3ff 0, #b1dbf8 100%);box-shadow:0 0 6px 0 #ddd;}
+.Header::before{position:absolute;top:0;height:4px;width:100%;background: linear-gradient(135deg, #ffffff 0, #ffffff 100%);box-shadow: 0 0 6px 0 #fff;}
 .Zsp-content,.Zsp-nav-link{position:relative;height:60px;display:flex;}
 .Zsp-content{align-items:center;justify-content:space-between;width:100%;margin:0 auto;padding:0 20px;}
 .Zsp-nav-list{display:flex;align-items:center;justify-content:flex-start;list-style-type:none;}
