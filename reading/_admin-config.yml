@@ -1,2 +1,3 @@
 options:
-  imagePath: '/read/images'
+  imagePath: '/images'
+  imgRoot: '/read'
