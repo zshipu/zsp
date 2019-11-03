@@ -41,6 +41,9 @@ if (theme.category && theme.category.sub) {
 
 %>
 <ul>
+    <li><div class="all"><a href="https://blog.zshipu.com/">博客主页</a></div></li>
+    <li><div class="all"><a href="https://blog.zshipu.com/note/">建站笔记</a></div></li>
+    <li><div class="all"><a href="https://blog.zshipu.com/article/post/">归档文章</a></div></li>
     <li><div class="all active">全部文章<% if (theme.category && theme.category.num) { %><small>(<%=site.posts.length%>)</small><%}%></div></li>
     <% site.categories.forEach(function(category){ %>
         <% if (theme.category && theme.category.sub) { %>
@@ -68,7 +71,6 @@ if (theme.category && theme.category.sub) {
             <li><div data-rel="<%=category.name%>"><%=category.name%><% if (theme.category && theme.category.num) { %><small>(<%= category.posts.length %>)</small><%}%></div></li>
         <% } %>
     <% }) %>
-    <li><div class="all"><a href="https://blog.zshipu.com/article/post/">归档文章</a></div></li>
 </ul>
 <div class="left-bottom">
     <div class="menus">
