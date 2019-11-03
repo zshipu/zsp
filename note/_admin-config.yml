@@ -1,3 +1,4 @@
 options:
   imagePath: '/images'
   imgRoot: 'https:\/\/blog.zshipu.com/note'
+  imgUpMsg: '知识铺-'
